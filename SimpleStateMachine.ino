@@ -33,35 +33,35 @@ void loop() {
   Serial.println(counter);
 
   // Red state
-  if(counter == 4) {
+  if(counter >= 4 && counter < 8) {
     // output only red
     digitalWrite(redLED, HIGH);
     digitalWrite(greenLED, LOW);
     digitalWrite(blueLED, LOW);
   }
   //green state
-  else if(counter == 8) {
+  else if(counter >= 8 && counter < 12) {
     // output only green
     digitalWrite(redLED, LOW);
     digitalWrite(greenLED, HIGH);
     digitalWrite(blueLED, LOW);
   }
   //Blue state
-  else if(counter == 12) {
+  else if(counter >= 12 && counter < 16) {
     // output only blue
     digitalWrite(redLED, LOW);
     digitalWrite(greenLED, LOW);
     digitalWrite(blueLED, HIGH);
   }
   //White state
-  else if(counter == 16) {
+  else if(counter >= 16 && counter < 20) {
     // output all rgb to make white
     digitalWrite(redLED, HIGH);
     digitalWrite(greenLED, HIGH);
     digitalWrite(blueLED, HIGH); 
   }
   //default state
-  else {
+  else if(counter == 0 || counter == 20){
     //reset
     counter=0;
     digitalWrite(redLED, LOW);
